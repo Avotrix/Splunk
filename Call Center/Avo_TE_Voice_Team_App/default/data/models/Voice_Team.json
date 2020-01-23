@@ -1,0 +1,307 @@
+{
+    "modelName": "Voice_Team",
+    "displayName": "Voice Team",
+    "description": "",
+    "objectSummary": {
+        "Event-Based": 1,
+        "Transaction-Based": 0,
+        "Search-Based": 0
+    },
+    "objects": [
+        {
+            "objectName": "voice_team",
+            "displayName": "voice_team",
+            "parentName": "BaseEvent",
+            "comment": "",
+            "fields": [
+                {
+                    "fieldName": "Agent",
+                    "owner": "voice_team",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "Agent",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "Answer",
+                    "owner": "voice_team",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "Answer",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "AvgTalkDuration",
+                    "owner": "voice_team",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "AvgTalkDuration",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "Call_Id",
+                    "owner": "voice_team",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "Call_Id",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "Department",
+                    "owner": "voice_team",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "Department",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "Resolved",
+                    "owner": "voice_team",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "Resolved",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "Satisfaction_rating",
+                    "owner": "voice_team",
+                    "type": "number",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "Satisfaction_rating",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "Speed_of_Answer",
+                    "owner": "voice_team",
+                    "type": "number",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "Speed_of_Answer",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "date",
+                    "owner": "voice_team",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "date",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "eventtype",
+                    "owner": "voice_team",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "eventtype",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "field",
+                    "owner": "voice_team",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "field",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "index",
+                    "owner": "voice_team",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "index",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "linecount",
+                    "owner": "voice_team",
+                    "type": "number",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "linecount",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "punct",
+                    "owner": "voice_team",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "punct",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "splunk_server",
+                    "owner": "voice_team",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "splunk_server",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "splunk_server_group",
+                    "owner": "voice_team",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "splunk_server_group",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "timestamp",
+                    "owner": "voice_team",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "timestamp",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "unix_category",
+                    "owner": "voice_team",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "unix_category",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "unix_group",
+                    "owner": "voice_team",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "unix_group",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "_time",
+                    "owner": "BaseEvent",
+                    "type": "timestamp",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "_time",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "host",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "host",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "source",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "source",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "sourcetype",
+                    "owner": "BaseEvent",
+                    "type": "string",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "sourcetype",
+                    "comment": ""
+                }
+            ],
+            "calculations": [],
+            "constraints": [
+                {
+                    "search": "index=te host=HeavyForwarder-Win sourcetype=voice",
+                    "owner": "voice_team"
+                }
+            ],
+            "lineage": "voice_team"
+        }
+    ],
+    "objectNameList": [
+        "voice_team"
+    ]
+}

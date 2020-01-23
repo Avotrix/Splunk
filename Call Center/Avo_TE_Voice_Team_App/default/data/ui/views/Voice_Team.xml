@@ -1,0 +1,309 @@
+<form theme="light">
+  <label>Voice Team</label>
+  <fieldset submitButton="false" autoRun="true">
+    <input type="time" token="field1" searchWhenChanged="true">
+      <label>TimeRange</label>
+      <default>
+        <earliest>-1w@w</earliest>
+        <latest>now</latest>
+      </default>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <title>Total Calls</title>
+      <single>
+        <search>
+          <query>| datamodel Voice_Team search |stats count</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="height">123</option>
+        <option name="rangeColors">["0x53a051","0xdc4e41"]</option>
+        <option name="rangeValues">[2000]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trellis.enabled">0</option>
+        <option name="underLabel">Total Call Attended</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+    <panel>
+      <title>Avg Answer Speed</title>
+      <single>
+        <search>
+          <query>| datamodel Voice_Team search 
+| stats avg(voice_team.Speed_of_Answer) as "Avg_Answer_Speed" 
+| eval Avg_Answer_Speed = round(Avg_Answer_Speed,2)</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="height">123</option>
+        <option name="numberPrecision">0.00</option>
+        <option name="rangeColors">["0x53a051","0xdc4e41"]</option>
+        <option name="rangeValues">[100]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="underLabel">Call Answered (in sec)</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+    <panel>
+      <title>Abandon Rate</title>
+      <single>
+        <search>
+          <query>| datamodel Voice_Team search 
+| rename "voice_team.Answer" as Ans 
+| eventstats count(Ans) as Ans_Total 
+| search Ans=N 
+| eventstats count(Ans) as Ans_No 
+| eval percentage=round((Ans_No/Ans_Total),2) 
+| stats count by Ans percentage 
+| table percentage</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="numberPrecision">0.00</option>
+        <option name="rangeColors">["0xdc4e41","0xdc4e41"]</option>
+        <option name="rangeValues">[30]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="underLabel">Calls Abandon Rate</option>
+        <option name="unit">%</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+    <panel>
+      <title>Average:calls/min</title>
+      <single>
+        <search>
+          <query>| datamodel Voice_Team search 
+| stats count as "Call_Id" 
+| eval Avg_call/Minute = round(Call_Id/(7*9*60),2) 
+| table Avg_call/Minute</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="numberPrecision">0.00</option>
+        <option name="rangeColors">["0x53a051","0xdc4e41"]</option>
+        <option name="rangeValues">[100]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="underLabel">Calls Per Min</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Overall Call Resolution</title>
+      <table>
+        <search>
+          <query>| datamodel Voice_Team search 
+| rename "voice_team.Answer" as Ans "voice_team.Speed_of_Answer" as SA 
+| eventstats count as "total_calls" by voice_team.Agent 
+| search Ans="Y" 
+| eventstats count as "calls_answered" avg(SA) by voice_team.Agent "total_calls" 
+| search voice_team.Resolved="Y" 
+| eventstats count values(voice_team.Resolved) by voice_team.Agent "total_calls" "calls_answered" avg(SA) 
+| eval temp=round(((count/calls_answered)*100),2) 
+| rename avg(SA) as Avg.Speed_of_Answer temp as "Call Resolution" 
+| stats sparkline count as "CR Trend" by "voice_team.Agent", "total_calls", "calls_answered", "Call Resolution" "Avg.Speed_of_Answer" 
+| rename total_calls as TotalCalls calls_answered as CallAnswered Avg.Speed_of_Answer as AvgSpeedOfAnswer 
+| eval AvgSpeedOfAnswer = round((AvgSpeedOfAnswer),2) 
+| fields - "CR Trend"</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="count">20</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">none</option>
+        <option name="percentagesRow">false</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="rowNumbers">false</option>
+        <option name="totalsRow">false</option>
+        <option name="wrap">true</option>
+        <format type="number" field="Avg.Speed_of_Answer"></format>
+      </table>
+    </panel>
+    <panel>
+      <title>% Abandon Rate - By Department</title>
+      <chart>
+        <search>
+          <query>| datamodel Voice_Team search 
+| rename "voice_team.Answer" as Ans 
+| eventstats count(Ans) as Ans_Total 
+| search Ans=N 
+| eventstats count(Ans) as Ans_No by voice_team.Department 
+| eval Percentage=round(((Ans_No/Ans_Total)*100),2) 
+| stats count by voice_team.Department Percentage 
+| fields - count</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.text">Abandon Rate (in %)</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.abbreviation">none</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.abbreviation">none</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.abbreviation">none</option>
+        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">column</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">10</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">gaps</option>
+        <option name="charting.chart.showDataLabels">all</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">default</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.mode">standard</option>
+        <option name="charting.legend.placement">right</option>
+        <option name="charting.lineWidth">2</option>
+        <option name="height">345</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trellis.enabled">0</option>
+        <option name="trellis.scales.shared">1</option>
+        <option name="trellis.size">medium</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Overall Satisfaction Score</title>
+      <chart>
+        <search>
+          <query>| datamodel Voice_Team search 
+| rename "voice_team.Satisfaction_rating" as SR "voice_team.Answer" as Ans 
+| eventstats sum(SR) as Total 
+| search Ans=Y 
+| eventstats count(Ans) as Ans_Total 
+| eval Satisfaction_Score = round((Total/Ans_Total),2) 
+| stats avg(Satisfaction_Score) as "Satisfaction Score"</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="charting.chart">radialGauge</option>
+        <option name="charting.chart.rangeValues">[0,2,3.5,5]</option>
+        <option name="charting.chart.style">minimal</option>
+        <option name="charting.gaugeColors">["0xdc4e41","0xf8be34","0x53a051"]</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>Overall Satisfaction Count by Agent</title>
+      <chart>
+        <search>
+          <query>| datamodel Voice_Team search 
+| rename "voice_team.Satisfaction_rating" as SA "voice_team.Answer" as Ans 
+| eventstats sum(SA) as Total 
+| search Ans=Y 
+| eventstats count(Ans) as Ans_Total 
+| eval Satisfaction_Score = round((Total/Ans_Total),2) 
+| stats count(Satisfaction_Score) as "Satisfaction Count" by voice_team.Agent</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="charting.chart">column</option>
+        <option name="charting.chart.showDataLabels">all</option>
+        <option name="charting.drilldown">none</option>
+        <option name="height">282</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>% Of Calls Answered In Less Than 180 secs</title>
+      <single>
+        <search>
+          <query>| datamodel Voice_Team search 
+| eventstats count(voice_team.AvgTalkDuration) AS topcount 
+| convert num(voice_team.AvgTalkDuration) AS time 
+| search time &lt; 180 
+| eventstats count(time) AS count1 
+| eval Calls_Answered = round((count1/topcount)*100,2) 
+| stats count by Calls_Answered 
+| fields - count</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="numberPrecision">0.00</option>
+        <option name="rangeColors">["0xdc4e41","0xf8be34","0x53a051"]</option>
+        <option name="rangeValues">[30,60]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="unit">%</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+    <panel>
+      <title>Count Of Calls with satisfaction score less than 3</title>
+      <single>
+        <search>
+          <query>| datamodel Voice_Team search 
+| search ("voice_team.Satisfaction_rating"=2 OR "voice_team.Satisfaction_rating"=1 OR "voice_team.Satisfaction_rating"=0 ) 
+| eventstats count as "voice_team.Satisfaction_rating" by "Satisfaction rating" 
+| stats count as Satisfaction_rating</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="rangeColors">["0x53a051","0xdc4e41"]</option>
+        <option name="rangeValues">[100]</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="underLabel">Count Of Calls</option>
+        <option name="unit">#</option>
+        <option name="unitPosition">before</option>
+        <option name="useColors">1</option>
+      </single>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Total Calls Attended By Agent And Call Has Been Resolved</title>
+      <chart>
+        <search>
+          <query>| datamodel Voice_Team search 
+| rename "voice_team.Answer" as Ans 
+| eventstats count as "Total_Calls" by voice_team.Agent 
+| search Ans = "Y" 
+| eventstats count as "Calls_Attended" by voice_team.Agent "Total_Calls" 
+| search voice_team.Resolved="Y" 
+| stats count values(voice_team.Resolved) by voice_team.Agent "Total_Calls" "Calls_Attended" 
+| rename count as Calls_Resolved 
+| fields - values(voice_team.Resolved)</query>
+          <earliest>$field1.earliest$</earliest>
+          <latest>$field1.latest$</latest>
+        </search>
+        <option name="charting.axisTitleX.text">Agent</option>
+        <option name="charting.chart">column</option>
+        <option name="charting.chart.showDataLabels">all</option>
+        <option name="charting.chart.stackMode">default</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+  </row>
+</form>

@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Voice Team Clone HTML</title>
+    <link rel="shortcut icon" href="/en-US/static/@AF65638B12E7C35B82FF71D0D03070712725C9B958677C02CB39F76CEB50C336/img/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="{{SPLUNKWEB_URL_PREFIX}}/static/build/css/bootstrap-enterprise.css" />
+    <link rel="stylesheet" type="text/css" href="{{SPLUNKWEB_URL_PREFIX}}/static/build/css/splunkjs-dashboard.css" />
+
+
+        <meta name="referrer" content="never" />
+        <meta name="referrer" content="no-referrer" />
+    
+        <script>
+            (function () {
+                window._splunk_metrics_events = [];
+                window._splunk_metrics_events.active = true;
+
+                function onLoadSwa() {
+                    new SWA({"visibility": "anonymous,support", "userID": "4131267c3d2870e5cbd96bd2866066e17b5e3520e744f8df4b67f7d01f160627", "url": "https://e1345286.api.splkmobile.com/1.0/e1345286", "instanceGUID": "886959FC-129F-4936-9EAE-CC06D08F40E2", "version": "3", "deploymentID": "a0f0ed67-de75-5e2c-a25c-76ab22170265"});
+                };
+
+                document.addEventListener("DOMContentLoaded", function(event) {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '/en-US/static/app/splunk_instrumentation/build/pages/swa.js';
+                    s.addEventListener('load', onLoadSwa);
+                    var x = document.getElementsByTagName('script')[0];
+                    x.parentNode.insertBefore(s, x);
+                });
+            }());
+        </script>
+    </head>
+<body class="simplexml preload locale-en" data-splunk-version="7.2.4.2" data-splunk-product="enterprise">
+<!--
+BEGIN LAYOUT
+This section contains the layout for the dashboard. Splunk uses proprietary
+styles in <div> tags, similar to Bootstrap's grid system.
+-->
+<header>
+    <a aria-label="Screen reader users, click here to skip the navigation bar" class="navSkip" href="#navSkip" tabIndex="1">Skip Navigation &gt;</a>
+    <div class="header splunk-header">
+            <div id="placeholder-splunk-bar">
+                <a href="{{SPLUNKWEB_URL_PREFIX}}/app/launcher/home" class="brand" title="splunk &gt; listen to your data">splunk<strong>&gt;</strong></a>
+            </div>
+                <div id="placeholder-app-bar"></div>
+    </div>
+    <a id="navSkip"></a>
+</header>
+<div class="dashboard-body container-fluid main-section-body" data-role="main">
+    <div class="dashboard-header clearfix">
+        <h2>Voice Team Clone HTML</h2>
+    </div>
+    <div class="fieldset">
+        <div class="input input-timerangepicker" id="input1">
+            <label>TimeRange</label>
+        </div>
+    </div>
+
+
+    <div id="row1" class="dashboard-row dashboard-row1">
+        <div id="panel1" class="dashboard-cell" style="width: 25%;">
+            <div class="dashboard-panel clearfix">
+                <h2 class="panel-title">Total Calls</h2>
+                
+                <div class="panel-element-row">
+                    <div id="element1" class="dashboard-element single" style="width: 100%">
+                        <div class="panel-body"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="panel2" class="dashboard-cell" style="width: 25%;">
+            <div class="dashboard-panel clearfix">
+                <h2 class="panel-title">Avg Answer Speed</h2>
+                
+                <div class="panel-element-row">
+                    <div id="element2" class="dashboard-element single" style="width: 100%">
+                        <div class="panel-body"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="panel3" class="dashboard-cell" style="width: 25%;">
+            <div class="dashboard-panel clearfix">
+                <h2 class="panel-title">Abandon Rate</h2>
+                
+                <div class="panel-element-row">
+                    <div id="element3" class="dashboard-element single" style="width: 100%">
+                        <div class="panel-body"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="panel4" class="dashboard-cell" style="width: 25%;">
+            <div class="dashboard-panel clearfix">
+                <h2 class="panel-title">Average:calls/min</h2>
+                
+                <div class="panel-element-row">
+                    <div id="element4" class="dashboard-element single" style="width: 100%">
+                        <div class="panel-body"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="row2" class="dashboard-row dashboard-row2">
+        <div id="panel5" class="dashboard-cell" style="width: 50%;">
+            <div class="dashboard-panel clearfix">
+                <h2 class="panel-title">Overall Call Resolution</h2>
+                
+                <div class="panel-element-row">
+                    <div id="element5" class="dashboard-element table" style="width: 100%">
+                        <div class="panel-body"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="panel6" class="dashboard-cell" style="width: 50%;">
+            <div class="dashboard-panel clearfix">
+                <h2 class="panel-title">% Abandon Rate - By Department</h2>
+                
+                <div class="panel-element-row">
+                    <div id="element6" class="dashboard-element chart" style="width: 100%">
+                        <div class="panel-body"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="row3" class="dashboard-row dashboard-row3">
+        <div id="panel7" class="dashboard-cell" style="width: 50%;">
+            <div class="dashboard-panel clearfix">
+                <h2 class="panel-title">Overall Satisfaction Score</h2>
+                
+                <div class="panel-element-row">
+                    <div id="element7" class="dashboard-element chart" style="width: 100%">
+                        <div class="panel-body"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="panel8" class="dashboard-cell" style="width: 50%;">
+            <div class="dashboard-panel clearfix">
+                <h2 class="panel-title">Overall Satisfaction Count by Agent</h2>
+                
+                <div class="panel-element-row">
+                    <div id="element8" class="dashboard-element chart" style="width: 100%">
+                        <div class="panel-body"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="row4" class="dashboard-row dashboard-row4">
+        <div id="panel9" class="dashboard-cell" style="width: 50%;">
+            <div class="dashboard-panel clearfix">
+                <h2 class="panel-title">% Of Calls Answered In Less Than 180 secs</h2>
+                
+                <div class="panel-element-row">
+                    <div id="element9" class="dashboard-element single" style="width: 100%">
+                        <div class="panel-body"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="panel10" class="dashboard-cell" style="width: 50%;">
+            <div class="dashboard-panel clearfix">
+                <h2 class="panel-title">Count Of Calls with satisfaction score less than 3</h2>
+                
+                <div class="panel-element-row">
+                    <div id="element10" class="dashboard-element single" style="width: 100%">
+                        <div class="panel-body"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="row5" class="dashboard-row dashboard-row5">
+        <div id="panel11" class="dashboard-cell" style="width: 100%;">
+            <div class="dashboard-panel clearfix">
+                <h2 class="panel-title">Total Calls Attended By Agent And Call Has Been Resolved</h2>
+                
+                <div class="panel-element-row">
+                    <div id="element11" class="dashboard-element chart" style="width: 100%">
+                        <div class="panel-body"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+END LAYOUT
+-->
+
+<script src="{{SPLUNKWEB_URL_PREFIX}}/config?autoload=1" crossorigin="use-credentials"></script>
+<script src="{{SPLUNKWEB_URL_PREFIX}}/static/js/i18n.js"></script>
+<script src="{{SPLUNKWEB_URL_PREFIX}}/i18ncatalog?autoload=1"></script>
+<script src="{{SPLUNKWEB_URL_PREFIX}}/static/build/simplexml/index.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+// <![CDATA[
+//
+// LIBRARY REQUIREMENTS
+//
+// In the require function, we include the necessary libraries and modules for
+// the HTML dashboard. Then, we pass variable names for these libraries and
+// modules as function parameters, in order.
+//
+// When you add libraries or modules, remember to retain this mapping order
+// between the library or module and its function parameter. You can do this by
+// adding to the end of these lists, as shown in the commented examples below.
+
+require([
+    "splunkjs/mvc",
+    "splunkjs/mvc/utils",
+    "splunkjs/mvc/tokenutils",
+    "underscore",
+    "jquery",
+    "splunkjs/mvc/simplexml",
+    "splunkjs/mvc/layoutview",
+    "splunkjs/mvc/simplexml/dashboardview",
+    "splunkjs/mvc/simplexml/dashboard/panelref",
+    "splunkjs/mvc/simplexml/element/chart",
+    "splunkjs/mvc/simplexml/element/event",
+    "splunkjs/mvc/simplexml/element/html",
+    "splunkjs/mvc/simplexml/element/list",
+    "splunkjs/mvc/simplexml/element/map",
+    "splunkjs/mvc/simplexml/element/single",
+    "splunkjs/mvc/simplexml/element/table",
+    "splunkjs/mvc/simplexml/element/visualization",
+    "splunkjs/mvc/simpleform/formutils",
+    "splunkjs/mvc/simplexml/eventhandler",
+    "splunkjs/mvc/simplexml/searcheventhandler",
+    "splunkjs/mvc/simpleform/input/dropdown",
+    "splunkjs/mvc/simpleform/input/radiogroup",
+    "splunkjs/mvc/simpleform/input/linklist",
+    "splunkjs/mvc/simpleform/input/multiselect",
+    "splunkjs/mvc/simpleform/input/checkboxgroup",
+    "splunkjs/mvc/simpleform/input/text",
+    "splunkjs/mvc/simpleform/input/timerange",
+    "splunkjs/mvc/simpleform/input/submit",
+    "splunkjs/mvc/searchmanager",
+    "splunkjs/mvc/savedsearchmanager",
+    "splunkjs/mvc/postprocessmanager",
+    "splunkjs/mvc/simplexml/urltokenmodel"
+    // Add comma-separated libraries and modules manually here, for example:
+    // ..."splunkjs/mvc/simplexml/urltokenmodel",
+    // "splunkjs/mvc/tokenforwarder"
+    ],
+    function(
+        mvc,
+        utils,
+        TokenUtils,
+        _,
+        $,
+        DashboardController,
+        LayoutView,
+        Dashboard,
+        PanelRef,
+        ChartElement,
+        EventElement,
+        HtmlElement,
+        ListElement,
+        MapElement,
+        SingleElement,
+        TableElement,
+        VisualizationElement,
+        FormUtils,
+        EventHandler,
+        SearchEventHandler,
+        DropdownInput,
+        RadioGroupInput,
+        LinkListInput,
+        MultiSelectInput,
+        CheckboxGroupInput,
+        TextInput,
+        TimeRangeInput,
+        SubmitButton,
+        SearchManager,
+        SavedSearchManager,
+        PostProcessManager,
+        UrlTokenModel
+
+        // Add comma-separated parameter names here, for example:
+        // ...UrlTokenModel,
+        // TokenForwarder
+        ) {
+
+        var pageLoading = true;
+
+
+        //
+        // TOKENS
+        //
+
+        // Create token namespaces
+        var urlTokenModel = new UrlTokenModel();
+        mvc.Components.registerInstance('url', urlTokenModel);
+        var defaultTokenModel = mvc.Components.getInstance('default', {create: true});
+        var submittedTokenModel = mvc.Components.getInstance('submitted', {create: true});
+
+        urlTokenModel.on('url:navigate', function() {
+            defaultTokenModel.set(urlTokenModel.toJSON());
+            if (!_.isEmpty(urlTokenModel.toJSON()) && !_.all(urlTokenModel.toJSON(), _.isUndefined)) {
+                submitTokens();
+            } else {
+                submittedTokenModel.clear();
+            }
+        });
+
+        // Initialize tokens
+        defaultTokenModel.set(urlTokenModel.toJSON());
+
+        function submitTokens() {
+            // Copy the contents of the defaultTokenModel to the submittedTokenModel and urlTokenModel
+            FormUtils.submitForm({ replaceState: pageLoading });
+        }
+
+        function setToken(name, value) {
+            defaultTokenModel.set(name, value);
+            submittedTokenModel.set(name, value);
+        }
+
+        function unsetToken(name) {
+            defaultTokenModel.unset(name);
+            submittedTokenModel.unset(name);
+        }
+
+
+
+        //
+        // SEARCH MANAGERS
+        //
+
+        
+var search1 = new SearchManager({
+            "id": "search1",
+            "earliest_time": "$field1.earliest$",
+            "sample_ratio": 1,
+            "status_buckets": 0,
+            "cancelOnUnload": true,
+            "latest_time": "$field1.latest$",
+            "search": "| datamodel Voice_Team search |stats count",
+            "app": utils.getCurrentApp(),
+            "auto_cancel": 90,
+            "preview": true,
+            "tokenDependencies": {
+            },
+            "runWhenTimeIsUndefined": false
+        }, {tokens: true, tokenNamespace: "submitted"});
+        
+var search2 = new SearchManager({
+            "id": "search2",
+            "earliest_time": "$field1.earliest$",
+            "sample_ratio": 1,
+            "status_buckets": 0,
+            "cancelOnUnload": true,
+            "latest_time": "$field1.latest$",
+            "search": "| datamodel Voice_Team search  | stats avg(voice_team.Speed_of_Answer) as \"Avg_Answer_Speed\"  | eval Avg_Answer_Speed = round(Avg_Answer_Speed,2)",
+            "app": utils.getCurrentApp(),
+            "auto_cancel": 90,
+            "preview": true,
+            "tokenDependencies": {
+            },
+            "runWhenTimeIsUndefined": false
+        }, {tokens: true, tokenNamespace: "submitted"});
+        
+var search3 = new SearchManager({
+            "id": "search3",
+            "earliest_time": "$field1.earliest$",
+            "sample_ratio": 1,
+            "status_buckets": 0,
+            "cancelOnUnload": true,
+            "latest_time": "$field1.latest$",
+            "search": "| datamodel Voice_Team search  | rename \"voice_team.Answer\" as Ans  | eventstats count(Ans) as Ans_Total  | search Ans=N  | eventstats count(Ans) as Ans_No  | eval percentage=round((Ans_No/Ans_Total),2)  | stats count by Ans percentage  | table percentage",
+            "app": utils.getCurrentApp(),
+            "auto_cancel": 90,
+            "preview": true,
+            "tokenDependencies": {
+            },
+            "runWhenTimeIsUndefined": false
+        }, {tokens: true, tokenNamespace: "submitted"});
+        
+var search4 = new SearchManager({
+            "id": "search4",
+            "earliest_time": "$field1.earliest$",
+            "sample_ratio": 1,
+            "status_buckets": 0,
+            "cancelOnUnload": true,
+            "latest_time": "$field1.latest$",
+            "search": "| datamodel Voice_Team search  | stats count as \"Call_Id\"  | eval Avg_call/Minute = round(Call_Id/(7*9*60),2)  | table Avg_call/Minute",
+            "app": utils.getCurrentApp(),
+            "auto_cancel": 90,
+            "preview": true,
+            "tokenDependencies": {
+            },
+            "runWhenTimeIsUndefined": false
+        }, {tokens: true, tokenNamespace: "submitted"});
+        
+var search5 = new SearchManager({
+            "id": "search5",
+            "earliest_time": "$field1.earliest$",
+            "sample_ratio": 1,
+            "status_buckets": 0,
+            "cancelOnUnload": true,
+            "latest_time": "$field1.latest$",
+            "search": "| datamodel Voice_Team search  | rename \"voice_team.Answer\" as Ans \"voice_team.Speed_of_Answer\" as SA  | eventstats count as \"total_calls\" by voice_team.Agent  | search Ans=\"Y\"  | eventstats count as \"calls_answered\" avg(SA) by voice_team.Agent \"total_calls\"  | search voice_team.Resolved=\"Y\"  | eventstats count values(voice_team.Resolved) by voice_team.Agent \"total_calls\" \"calls_answered\" avg(SA)  | eval temp=round(((count/calls_answered)*100),2)  | rename avg(SA) as Avg.Speed_of_Answer temp as \"Call Resolution\"  | stats sparkline count as \"CR Trend\" by \"voice_team.Agent\", \"total_calls\", \"calls_answered\", \"Call Resolution\" \"Avg.Speed_of_Answer\"  | rename total_calls as TotalCalls calls_answered as CallAnswered Avg.Speed_of_Answer as AvgSpeedOfAnswer  | eval AvgSpeedOfAnswer = round((AvgSpeedOfAnswer),2)  | fields - \"CR Trend\"",
+            "app": utils.getCurrentApp(),
+            "auto_cancel": 90,
+            "preview": true,
+            "tokenDependencies": {
+            },
+            "runWhenTimeIsUndefined": false
+        }, {tokens: true, tokenNamespace: "submitted"});
+        
+var search6 = new SearchManager({
+            "id": "search6",
+            "earliest_time": "$field1.earliest$",
+            "sample_ratio": 1,
+            "status_buckets": 0,
+            "cancelOnUnload": true,
+            "latest_time": "$field1.latest$",
+            "search": "| datamodel Voice_Team search  | rename \"voice_team.Answer\" as Ans  | eventstats count(Ans) as Ans_Total  | search Ans=N  | eventstats count(Ans) as Ans_No by voice_team.Department  | eval Percentage=round(((Ans_No/Ans_Total)*100),2)  | stats count by voice_team.Department Percentage  | fields - count",
+            "app": utils.getCurrentApp(),
+            "auto_cancel": 90,
+            "preview": true,
+            "tokenDependencies": {
+            },
+            "runWhenTimeIsUndefined": false
+        }, {tokens: true, tokenNamespace: "submitted"});
+        
+var search7 = new SearchManager({
+            "id": "search7",
+            "earliest_time": "$field1.earliest$",
+            "sample_ratio": 1,
+            "status_buckets": 0,
+            "cancelOnUnload": true,
+            "latest_time": "$field1.latest$",
+            "search": "| datamodel Voice_Team search  | rename \"voice_team.Satisfaction_rating\" as SR \"voice_team.Answer\" as Ans  | eventstats sum(SR) as Total  | search Ans=Y  | eventstats count(Ans) as Ans_Total  | eval Satisfaction_Score = round((Total/Ans_Total),2)  | stats avg(Satisfaction_Score) as \"Satisfaction Score\"",
+            "app": utils.getCurrentApp(),
+            "auto_cancel": 90,
+            "preview": true,
+            "tokenDependencies": {
+            },
+            "runWhenTimeIsUndefined": false
+        }, {tokens: true, tokenNamespace: "submitted"});
+        
+var search8 = new SearchManager({
+            "id": "search8",
+            "earliest_time": "$field1.earliest$",
+            "sample_ratio": 1,
+            "status_buckets": 0,
+            "cancelOnUnload": true,
+            "latest_time": "$field1.latest$",
+            "search": "| datamodel Voice_Team search  | rename \"voice_team.Satisfaction_rating\" as SA \"voice_team.Answer\" as Ans  | eventstats sum(SA) as Total  | search Ans=Y  | eventstats count(Ans) as Ans_Total  | eval Satisfaction_Score = round((Total/Ans_Total),2)  | stats count(Satisfaction_Score) as \"Satisfaction Count\" by voice_team.Agent",
+            "app": utils.getCurrentApp(),
+            "auto_cancel": 90,
+            "preview": true,
+            "tokenDependencies": {
+            },
+            "runWhenTimeIsUndefined": false
+        }, {tokens: true, tokenNamespace: "submitted"});
+        
+var search9 = new SearchManager({
+            "id": "search9",
+            "earliest_time": "$field1.earliest$",
+            "sample_ratio": 1,
+            "status_buckets": 0,
+            "cancelOnUnload": true,
+            "latest_time": "$field1.latest$",
+            "search": "| datamodel Voice_Team search  | eventstats count(voice_team.AvgTalkDuration) AS topcount  | convert num(voice_team.AvgTalkDuration) AS time  | search time < 180  | eventstats count(time) AS count1  | eval Calls_Answered = round((count1/topcount)*100,2)  | stats count by Calls_Answered  | fields - count",
+            "app": utils.getCurrentApp(),
+            "auto_cancel": 90,
+            "preview": true,
+            "tokenDependencies": {
+            },
+            "runWhenTimeIsUndefined": false
+        }, {tokens: true, tokenNamespace: "submitted"});
+        
+var search10 = new SearchManager({
+            "id": "search10",
+            "earliest_time": "$field1.earliest$",
+            "sample_ratio": 1,
+            "status_buckets": 0,
+            "cancelOnUnload": true,
+            "latest_time": "$field1.latest$",
+            "search": "| datamodel Voice_Team search  | search (\"voice_team.Satisfaction_rating\"=2 OR \"voice_team.Satisfaction_rating\"=1 OR \"voice_team.Satisfaction_rating\"=0 )  | eventstats count as \"voice_team.Satisfaction_rating\" by \"Satisfaction rating\"  | stats count as Satisfaction_rating",
+            "app": utils.getCurrentApp(),
+            "auto_cancel": 90,
+            "preview": true,
+            "tokenDependencies": {
+            },
+            "runWhenTimeIsUndefined": false
+        }, {tokens: true, tokenNamespace: "submitted"});
+        
+var search11 = new SearchManager({
+            "id": "search11",
+            "earliest_time": "$field1.earliest$",
+            "sample_ratio": null,
+            "status_buckets": 0,
+            "cancelOnUnload": true,
+            "latest_time": "$field1.latest$",
+            "search": "| datamodel Voice_Team search  | rename \"voice_team.Answer\" as Ans  | eventstats count as \"Total_Calls\" by voice_team.Agent  | search Ans = \"Y\"  | eventstats count as \"Calls_Attended\" by voice_team.Agent \"Total_Calls\"  | search voice_team.Resolved=\"Y\"  | stats count values(voice_team.Resolved) by voice_team.Agent \"Total_Calls\" \"Calls_Attended\"  | rename count as Calls_Resolved  | fields - values(voice_team.Resolved)",
+            "app": utils.getCurrentApp(),
+            "auto_cancel": 90,
+            "preview": true,
+            "tokenDependencies": {
+            },
+            "runWhenTimeIsUndefined": false
+        }, {tokens: true, tokenNamespace: "submitted"});
+
+
+        //
+        // SPLUNK LAYOUT
+        //
+
+        $('header').remove();
+        new LayoutView({"hideAppBar": true, "hideChrome": true, "hideSplunkBar": true, "hideFooter": true})
+            .render()
+            .getContainerElement()
+            .appendChild($('.dashboard-body')[0]);
+
+        //
+        // DASHBOARD EDITOR
+        //
+
+        new Dashboard({
+            id: 'dashboard',
+            el: $('.dashboard-body'),
+            showTitle: true,
+            editable: false
+        }, {tokens: true}).render();
+
+
+        //
+        // VIEWS: VISUALIZATION ELEMENTS
+        //
+
+        var element1 = new SingleElement({
+            "id": "element1",
+			"link.visible": "false",
+			"refresh.time.visible": "false",
+            "height": "123",
+            "underLabel": "Total Call Attended",
+            "drilldown": "none",
+            "trellis.enabled": "0",
+            "useColors": "1",
+            "refresh.display": "progressbar",
+            "rangeValues": "[2000]",
+            "rangeColors": "[\"0x53a051\",\"0xdc4e41\"]",
+            "managerid": "search1",
+            "el": $('#element1')
+        }, {tokens: true, tokenNamespace: "submitted"}).render();
+
+        var element2 = new SingleElement({
+            "id": "element2",
+            "height": "123",
+            "numberPrecision": "0.00",
+            "underLabel": "Call Answered (in sec)",
+            "drilldown": "none",
+            "useColors": "1",
+            "refresh.display": "progressbar",
+            "rangeValues": "[100]",
+            "rangeColors": "[\"0x53a051\",\"0xdc4e41\"]",
+            "managerid": "search2",
+            "el": $('#element2')
+        }, {tokens: true, tokenNamespace: "submitted"}).render();
+
+        var element3 = new SingleElement({
+            "id": "element3",
+            "unit": "%",
+            "underLabel": "Calls Abandon Rate",
+            "drilldown": "none",
+            "numberPrecision": "0.00",
+            "refresh.display": "progressbar",
+            "useColors": "1",
+            "rangeValues": "[30]",
+            "rangeColors": "[\"0xdc4e41\",\"0xdc4e41\"]",
+            "managerid": "search3",
+            "el": $('#element3')
+        }, {tokens: true, tokenNamespace: "submitted"}).render();
+
+        var element4 = new SingleElement({
+            "id": "element4",
+            "numberPrecision": "0.00",
+            "underLabel": "Calls Per Min",
+            "drilldown": "none",
+            "useColors": "1",
+            "refresh.display": "progressbar",
+            "rangeValues": "[100]",
+            "rangeColors": "[\"0x53a051\",\"0xdc4e41\"]",
+            "managerid": "search4",
+            "el": $('#element4')
+        }, {tokens: true, tokenNamespace: "submitted"}).render();
+
+        var element5 = new TableElement({
+            "id": "element5",
+            "count": 20,
+            "dataOverlayMode": "none",
+            "drilldown": "none",
+            "format": {"Avg.Speed_of_Answer": [{"options": {}, "type": "number"}]},
+            "percentagesRow": "false",
+            "refresh.display": "progressbar",
+            "rowNumbers": "false",
+            "totalsRow": "false",
+            "wrap": "true",
+            "managerid": "search5",
+            "el": $('#element5')
+        }, {tokens: true, tokenNamespace: "submitted"}).render();
+
+        var element6 = new ChartElement({
+            "id": "element6",
+            "charting.chart.showDataLabels": "all",
+            "charting.layout.splitSeries": "0",
+            "charting.chart.sliceCollapsingThreshold": "0.01",
+            "charting.axisLabelsX.majorLabelStyle.rotation": "0",
+            "trellis.enabled": "0",
+            "charting.axisTitleY.visibility": "visible",
+            "charting.chart.bubbleMaximumSize": "50",
+            "charting.axisY2.scale": "inherit",
+            "charting.legend.mode": "standard",
+            "charting.axisX.abbreviation": "none",
+            "charting.chart.nullValueMode": "gaps",
+            "charting.axisY.scale": "linear",
+            "charting.legend.placement": "right",
+            "charting.legend.labelStyle.overflowMode": "ellipsisMiddle",
+            "charting.chart": "column",
+            "charting.chart.style": "shiny",
+            "charting.axisTitleY.text": "Abandon Rate (in %)",
+            "charting.chart.stackMode": "default",
+            "charting.layout.splitSeries.allowIndependentYRanges": "0",
+            "charting.axisY.abbreviation": "none",
+            "charting.chart.bubbleMinimumSize": "10",
+            "trellis.scales.shared": "1",
+            "charting.chart.bubbleSizeBy": "area",
+            "charting.axisX.scale": "linear",
+            "refresh.display": "progressbar",
+            "charting.axisY2.abbreviation": "none",
+            "charting.axisLabelsX.majorLabelStyle.overflowMode": "ellipsisNone",
+            "charting.lineWidth": "2",
+            "trellis.size": "medium",
+            "charting.axisTitleY2.visibility": "visible",
+            "charting.drilldown": "none",
+            "resizable": true,
+            "charting.axisTitleX.visibility": "visible",
+            "height": "345",
+            "charting.axisY2.enabled": "0",
+            "managerid": "search6",
+            "el": $('#element6')
+        }, {tokens: true, tokenNamespace: "submitted"}).render();
+
+
+        var element7 = new ChartElement({
+            "id": "element7",
+            "charting.gaugeColors": "[\"0xdc4e41\",\"0xf8be34\",\"0x53a051\"]",
+            "resizable": true,
+            "charting.chart": "radialGauge",
+            "charting.chart.style": "minimal",
+            "refresh.display": "progressbar",
+            "charting.chart.rangeValues": "[0,2,3.5,5]",
+            "managerid": "search7",
+            "el": $('#element7')
+        }, {tokens: true, tokenNamespace: "submitted"}).render();
+
+
+        var element8 = new ChartElement({
+            "id": "element8",
+            "charting.chart.showDataLabels": "all",
+            "height": "282",
+            "charting.drilldown": "none",
+            "resizable": true,
+            "charting.chart": "column",
+            "refresh.display": "progressbar",
+            "managerid": "search8",
+            "el": $('#element8')
+        }, {tokens: true, tokenNamespace: "submitted"}).render();
+
+
+        var element9 = new SingleElement({
+            "id": "element9",
+            "numberPrecision": "0.00",
+            "drilldown": "none",
+            "useColors": "1",
+            "unit": "%",
+            "refresh.display": "progressbar",
+            "rangeValues": "[30,60]",
+            "rangeColors": "[\"0xdc4e41\",\"0xf8be34\",\"0x53a051\"]",
+            "managerid": "search9",
+            "el": $('#element9')
+        }, {tokens: true, tokenNamespace: "submitted"}).render();
+
+        var element10 = new SingleElement({
+            "id": "element10",
+            "unitPosition": "before",
+            "underLabel": "Count Of Calls",
+            "drilldown": "none",
+            "useColors": "1",
+            "unit": "#",
+            "refresh.display": "progressbar",
+            "rangeValues": "[100]",
+            "rangeColors": "[\"0x53a051\",\"0xdc4e41\"]",
+            "managerid": "search10",
+            "el": $('#element10')
+        }, {tokens: true, tokenNamespace: "submitted"}).render();
+
+        var element11 = new ChartElement({
+            "id": "element11",
+            "charting.chart.showDataLabels": "all",
+            "charting.layout.splitSeries": "0",
+            "charting.axisTitleX.text": "Agent",
+            "charting.drilldown": "none",
+            "resizable": true,
+            "charting.chart": "column",
+            "refresh.display": "progressbar",
+            "charting.chart.stackMode": "default",
+            "managerid": "search11",
+            "el": $('#element11')
+        }, {tokens: true, tokenNamespace: "submitted"}).render();
+
+
+
+        //
+        // VIEWS: FORM INPUTS
+        //
+
+        var input1 = new TimeRangeInput({
+            "id": "input1",
+            "searchWhenChanged": true,
+            "default": {"earliest_time": "-1w@w", "latest_time": "now"},
+            "earliest_time": "$form.field1.earliest$",
+            "latest_time": "$form.field1.latest$",
+            "el": $('#input1')
+        }, {tokens: true}).render();
+
+        input1.on("change", function(newValue) {
+            FormUtils.handleValueChange(input1);
+        });
+        
+        DashboardController.onReady(function() {
+            if (!submittedTokenModel.has('earliest') && !submittedTokenModel.has('latest')) {
+                submittedTokenModel.set({ earliest: '0', latest: '' });
+            }
+        });
+
+        // Initialize time tokens to default
+        if (!defaultTokenModel.has('earliest') && !defaultTokenModel.has('latest')) {
+            defaultTokenModel.set({ earliest: '0', latest: '' });
+        }
+
+        submitTokens();
+
+
+        //
+        // DASHBOARD READY
+        //
+
+        DashboardController.ready();
+        pageLoading = true;
+
+    }
+);
+// ]]>
+</script>
+</body>
+</html>
